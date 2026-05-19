@@ -1,0 +1,163 @@
+:root {
+            --bg-principal: #0d1117;
+            --bg-tarjeta: #161b22;
+            --bg-borde: #30363d;
+            --texto-principal: #c9d1d9;
+            --texto-secundario: #8b949e;
+            --accent-neon: #58a6ff;
+            --accent-exito: #2ea44f;
+            --accent-error: #f85149;
+            --accent-espera: #d29922;
+            --fuente-titulo: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --fuente-codigo: 'Fira Code', Consolas, Monaco, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            font-family: var(--fuente-titulo);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Contenedor Principal */
+        .restaurant-container {
+            background-color: var(--bg-tarjeta);
+            border: 1px solid var(--bg-borde);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 550px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .restaurant-container:hover {
+            border-color: var(--accent-neon);
+            box-shadow: 0 10px 35px rgba(88, 166, 255, 0.15);
+        }
+
+        /* Encabezado */
+        .restaurant-header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 1px dashed var(--bg-borde);
+            padding-bottom: 20px;
+        }
+
+        .restaurant-header h1 {
+            font-size: 1.8rem;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .restaurant-header h1 span {
+            color: var(--accent-neon);
+        }
+
+        .restaurant-header p {
+            font-size: 0.9rem;
+            color: var(--texto-secundario);
+        }
+
+        /* Panel de Control (Botón) */
+        .control-panel {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .btn-bistro {
+            background-color: var(--accent-exito);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(46, 164, 79, 0.2);
+            font-family: var(--fuente-titulo);
+        }
+
+        .btn-bistro:hover:not(:disabled) {
+            background-color: #2c974b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(46, 164, 79, 0.3);
+        }
+
+        .btn-bistro:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        .btn-bistro:disabled {
+            background-color: var(--bg-borde);
+            color: var(--texto-secundario);
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            animation: fadeIn 0.3s ease forwards;
+            line-height: 1.4;
+        }
+
+        .status-info { color: var(--accent-neon); }
+        .status-preparing { color: var(--accent-espera); }
+        .status-success { color: var(--accent-exito); }
+        .status-error { 
+            color: var(--accent-error);
+            background-color: rgba(248, 81, 73, 0.1);
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-error);
+        }
+        .status-final {
+            color: #fff;
+            font-weight: bold;
+            border-top: 1px solid var(--bg-borde);
+            padding-top: 12px;
+            margin-top: 5px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        /* Spinner / Loader CSS animado */
+        .loader {
+            width: 16px;
+            height: 16px;
+            border: 2px solid transparent;
+            border-top-color: currentColor;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        
