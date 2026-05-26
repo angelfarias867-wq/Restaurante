@@ -3,7 +3,7 @@ const statusContainer = document.getElementById("simulacion")
 const proceso = {
   tiempoProcesado: 3000,
   tiempoPreparacion: 4000,
-  probabilidadExito: 0.70 
+  probabilidadExito: 0.20 
 };
 
 const limpiarInterfaz = () => {
